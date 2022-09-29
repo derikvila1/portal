@@ -66,4 +66,26 @@
 .divCalGeneros{
     margin-top: 0;
 }
+/*cards*/
 
+.divCard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    margin-top: 2rem;
+}
+.divCardT{
+    max-width: 280px;
+}
+
+.divCardback{
+    width: 280px;
+    height: 285px;
+    background-image: url('https://cdn.folhape.com.br/img/pc/450/450/dn_arquivo/2022/07/whatsapp-image-2022-07-07-at-091547.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.divDescri{
+    background-color: #6566AA;
+}
