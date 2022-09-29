@@ -1,0 +1,515 @@
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+
+        function loadMore(){
+            const load_num = 12;
+            var times_loaded = 1;
+        }
+
+        function localevento(local){
+            var linklocal;
+            switch (local[0].localization) {
+            case 'TEATRO AMAZONAS':
+                linklocal = 'https://cultura.am.gov.br/portal/teatro-amazonas/';
+                break;
+            case 'TEATRO AMÉRICO ALVAREZ':
+                linklocal = 'https://cultura.am.gov.br/portal/teatro-americo-alvarez/';
+                break;
+            case 'TEATRO DA INSTALAÇÃO':
+                linklocal = 'https://cultura.am.gov.br/portal/teatro-da-instalacao/';
+                break;
+            case 'TEATRO JORGE BONATES':
+                linklocal = 'https://cultura.am.gov.br/portal/teatro-jorge-bonates/';
+                break;
+            case 'TEATRO GEBES MEDEIROS':
+                linklocal = 'https://cultura.am.gov.br/portal/teatro-gebes-medeiros/';
+                break;
+            case 'BIBLIOTECA THALIA PHEDRA BORGES DOS SANTOS':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-thalia-phedra-borges-dos-santos/';
+                break;
+            case 'BIBLIOTECA PÚBLICA DO AMAZONAS':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-publica/';
+                break;
+            case 'BIBLIOTECA PADRE AGOSTINHO CABALLERO MARTIN':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-padre-agostinho-caballero-martin/';
+                break;
+            case 'BIBLIOTECA MÁRIO YPIRANGA MONTEIRO':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-mario-ypiranga-monteiro/';
+                break;
+            case 'BIBLIOTECA GENESINO BRAGA':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-genesino-braga/';
+                break;
+            case 'BIBLIOTECA FRED GÓES – PARINTINS':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-fred-goes-parintins/';
+                break;
+            case 'BIBLIOTECA INFANTIL EMÍDIO VAZ':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-infantil-emidio-vaz/';
+                break;
+            case 'BIBLIOTECA DE ARTES':
+                linklocal = 'https://cultura.am.gov.br/portal/biblioteca-de-artes/';
+                break;
+            case 'BANCA BIBLIOTECA FARIAS CARVALHO':
+                linklocal = 'https://cultura.am.gov.br/portal/banca-biblioteca-farias-carvalho/';
+                break;
+            case 'CENTRO CULTURAL PALÁCIO RIO NEGRO':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-cultural-palacio-rio-negro/';
+                break;
+            case 'CENTRO CULTURAL PALÁCIO DA JUSTIÇA':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-cultural-palacio-da-justica/';
+                break;
+            case 'CENTRO CULTURAL DOS POVOS DA AMAZÔNIA':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-cultural-dos-povos-da-amazonia/';
+                break;
+            case 'CENTRO CULTURAL USINA CHAMINÉ':
+                linklocal = 'https://cultura.am.gov.br/portal/usina-chamine/';
+                break;
+            case 'Sambódromo – Centro de Convenções Professor Gilberto Mestrinho':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-de-convencoes-professor-gilberto-mestrinho-sambodromo/';
+                break;
+            case 'CENTRO CULTURAL DE PARINTINS – BUMBÓDROMO':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-cultural-amazonino-mendes-bumbodromo/';
+                break;
+            case 'CENTRO DE CONVIVÊNCIA DA FAMÍLIA MAGDALENA ARCE DAOU':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-de-convivencia-magdalena-arce-daou/';
+                break;
+            case 'CENTRO DE CONVIVÊNCIA ESTADUAL DO IDOSO (CECI) – APARECIDA':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-de-convivencia-estadual-do-idoso-ceci-aparecida/';
+                break;
+            case 'CENTRO DE CONVIVÊNCIA DA FAMÍLIA PADRE PEDRO VIGNOLA':
+                linklocal = 'https://cultura.am.gov.br/portal/centro-de-convivencia-da-familia-padre-pedro-vignola/';
+                break;
+            case 'CINETEATRO GUARANY':
+                linklocal = 'https://cultura.am.gov.br/portal/cineteatro-guarany/';
+                break;
+            case 'CINETEATRO COMANDANTE VENTURA':
+                linklocal = 'https://cultura.am.gov.br/portal/cine-teatro-comandante-ventura/';
+                break;
+            case 'CINETEATRO PE. PEDRO VIGNOLA':
+                linklocal = 'https://cultura.am.gov.br/portal/cine-teatro-pe-pedro-vignola/';
+                break;
+            case 'CINETEATRO ALDEMAR BONATES':
+                linklocal = 'https://cultura.am.gov.br/portal/cine-teatro-aldemar-bonates/';
+                break;
+            case 'CASA DAS ARTES':
+                linklocal = 'https://cultura.am.gov.br/portal/casa-das-artes/';
+                break;
+            case 'GALERIA DO LARGO':
+                linklocal = 'https://cultura.am.gov.br/portal/galeria-do-largo/';
+                break;
+            case 'PALACETE PROVINCIAL':
+                linklocal = 'https://cultura.am.gov.br/portal/palacete-provincial/';
+                break;
+            case 'PINACOTECA DO ESTADO DO AMAZONAS':
+                linklocal = 'https://cultura.am.gov.br/portal/pinacoteca-do-estado/';
+                break;
+            case 'MUSEU DA IMAGEM E DO SOM DO AMAZONAS':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-da-imagem-e-do-som-do-amazonas/';
+                break;
+            case 'MUSEU DE NUMISMÁTICA BERNARDO RAMOS':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-de-numismatica-bernardo-ramos/';
+                break;
+            case 'MUSEU TIRADENTES':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-tiradentes/';
+                break;
+            case 'MUSEU DE ARQUEOLOGIA':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-de-arqueologia/';
+                break;
+            case 'LABORATÓRIO DE ARQUEOLOGIA':
+                linklocal = 'https://cultura.am.gov.br/portal/laboratorio-de-arqueologia/';
+                break;
+            case 'MUSEU DO SERINGAL VILA PARAÍSO':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-do-seringal-vila-paraiso/';
+                break;
+            case 'MUSEU CASA EDUARDO RIBEIRO':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-casa-eduardo-ribeiro/';
+                break;
+            case 'MUSEU DO HOMEM DO NORTE':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-do-homem-do-norte/';
+                break;
+            case 'MUSEU DO TEATRO AMAZONAS':
+                linklocal = 'http://cultura.am.gov.br/portal/index.php/cineteatro-guarany/';
+                break;
+            case 'MUSEU DO CRIME':
+                linklocal = 'https://cultura.am.gov.br/portal/museu-do-crime/';
+                break;
+            case 'LARGO DE SÃO SEBASTIÃO':
+                linklocal = 'https://cultura.am.gov.br/portal/largo-de-sao-sebastiao/';
+                break;
+            case 'PRAÇA HELIODORO BALBI (DA POLÍCIA)':
+                linklocal = 'https://cultura.am.gov.br/portal/praca-heliodoro-balbi/';
+                break;
+            case 'PARQUE SENADOR JEFFERSON PÉRES':
+                linklocal = 'https://cultura.am.gov.br/portal/parque-senador-jefferson-peres/';
+                break;
+            case 'Praça Antônio Bittencourt (do Congresso)':
+                linklocal = 'https://cultura.am.gov.br/portal/praca-antonio-bittencourt/';
+                break;
+            case 'Parque Rio Negro':
+                linklocal = 'https://cultura.am.gov.br/portal/parque-rio-negro/';
+                break;
+            case 'Núcleo de Arte e Educação':
+                linklocal = 'https://cultura.am.gov.br/portal/nucleo-de-arte-e-educacao/';
+                break;
+            default:
+                linklocal = 'https://cultura.am.gov.br/portal/espacos/';
+                break;
+            };
+            return linklocal;
+        }
+
+        function comochegar(local){
+            var linklocal ;
+            let html = 'https://www.google.com/maps/search/'+local;
+            return  html;    
+        }
+       
+        function fachaetaria(faixa_idade){
+            var faixa_etaria;
+            switch (faixa_idade) {
+                    
+                case 'Livre':
+                    faixa_etaria = 'http://cultura.am.gov.br/portal/wp-content/uploads/2019/02/livre.png';
+                    break;
+                case 'Não recomendado para menores de dez anos':
+                    faixa_etaria = 'http://cultura.am.gov.br/portal/wp-content/uploads/2019/02/menores_10.png';
+                    break;
+                case 'Não recomendado para menores de doze anos':
+                    faixa_etaria = 'http://cultura.am.gov.br/portal/wp-content/uploads/2019/02/menores_12.png';
+                    break;
+                case 'Não recomendado para menores de dezesseis ano':
+                    faixa_etaria = 'http://cultura.am.gov.br/portal/wp-content/uploads/2019/02/menores_16.png';
+                    break;
+                case 'Não recomendado para menores de catorze anos':
+                    faixa_etaria = 'http://cultura.am.gov.br/portal/wp-content/uploads/2019/02/menores_14.png';
+                    break;
+                case 'Não recomendado para menores de dezoito anos':
+                    faixa_etaria = 'http://cultura.am.gov.br/portal/wp-content/uploads/2019/02/menores_18.png';
+                    break;
+            };
+            return faixa_etaria;
+        }
+
+        function pagamento(url,tipo){
+            let html;
+            if(tipo == "Disponibilização Externa Remunerada" || tipo == "Disponibilização Interna Remunerada"){
+                if(url != ""){
+                    html = '<a class="btn btn-primary" href="'+url+'" ><img src="http://cultura.am.gov.br/portal/wp-content/uploads/2019/11/Compra_de_Ingressos-1.png"  style="padding-left:6px"></a>';
+                    return html;
+                }else{
+                    html = 'Venda de Ingresso';  
+                    return html;
+                }
+            }else if(tipo == "Disponibilização Externa Não Remunerada" || tipo == "Disponibilização Interna Não Remunerada"){
+                html = 'Evento Gratuito';  
+                return html;
+            }
+            if ("Transmissão On-line"==tipo){
+                html = 'Transmissão On-line';  
+                return html;
+            }
+        }        
+
+        function filtrodiasdoevento(inicio,fim,valor){
+            var html;
+            var dias;  
+            let concatena;
+            let hora;
+			var sessao=0;
+            html = '<p align="left" style="margin-top: 0.5em;margin-bottom: 0.5em;"><b>Evento no dia:</b></p> ';
+            //evento se repete
+            for(i=0;i<valor;i++){
+                hora = inicio[i].hr_inicio.split(':');						
+                concatena = inicio[i].dt_inicio.split('/');
+                local = inicio[i].localization;
+                //quando se tem mais de um evento no mesmo dia
+                if (inicio[i].dt_inicio==inicio[i+1].dt_inicio) {
+                    sessao++;
+                    html += '\n\
+                    <p align="left" style="margin-top: 0.0em;margin-bottom: 0.0em;"> \n\
+                        <br><b>Data: </b><br> \n\
+                        '+concatena[0]+'/'+concatena[1]+', '+sessao+' Sessão às '+hora[0]+'h'+hora[1]+'\n\
+                        <br><br><b>Local: </b><br> \n\
+                        <span class="meta-author meta-item">\n\
+                            <img src="https://cultura.am.gov.br/portal/wp-content/uploads/2019/04/como-chegar.png" style="width: 12px; height: 12px%;padding-left: -5pxpadding-left: -5px;padding-hight: -15px">\n\
+                        </span>\n\
+                        <a href="'+comochegar(local)+'">'+local+'</a>.\n\
+                    </p>'
+                    i++;
+                    sessao++;
+                    hora = inicio[i].hr_inicio.split(':');						
+                    concatena = inicio[i].dt_inicio.split('/');
+                    local = inicio[i].localization;
+                    html += '\n\
+                    <p align="left" style="margin-top: 0.0em;margin-bottom: 0.0em;"> \n\
+                        <br><b>Data: </b><br> \n\
+                        '+concatena[0]+'/'+concatena[1]+', '+sessao+' Sessão às '+hora[0]+'h'+hora[1]+'\n\
+                        <br><br><b>Local: </b><br> \n\
+                        <span class="meta-author meta-item">\n\
+                            <img src="https://cultura.am.gov.br/portal/wp-content/uploads/2019/04/como-chegar.png" style="width: 12px; height: 12px%;padding-left: -5pxpadding-left: -5px;padding-hight: -15px">\n\
+                        </span>\n\
+                        <a href="'+comochegar(local)+'">'+local+'</a>.\n\
+                    </p>';
+                    sessao=0;
+                }else{
+                    html += '\n\
+                    <p align="left" style="margin-top: 0.0em;margin-bottom: 0.0em;">\n\
+                        <br><b>Data: </b><br> \n\
+                        '+concatena[0]+'/'+concatena[1]+', às '+hora[0]+'h'+hora[1]+'\n\
+                        <br><b>Local: </b><br> \n\
+                        <span class="meta-author meta-item">\n\
+                            <img src="https://cultura.am.gov.br/portal/wp-content/uploads/2019/04/como-chegar.png" style="width: 12px; height: 12px%;padding-left: -5pxpadding-left: -5px;padding-hight: -15px">\n\
+                        </span>\n\
+                        <a href="'+comochegar(local)+'">'+local+'</a>.\n\
+                    </p>';
+                }
+            }
+            hora = inicio[valor].hr_inicio.split(':');
+            concatena = inicio[valor].dt_inicio.split('/');
+            console.log(inicio,fim,valor);
+            //controle de sessao de um unico dia            
+            html += '\n\
+            <p align="left">\n\
+                <br><b>Data: </b><br> \n\
+                '+concatena[0]+'/'+concatena[1]+', às '+hora[0]+'h'+hora[1]+' \n\
+                <br><b>Local: </b><br> \n\
+                <span class="meta-author meta-item">\n\
+                    <img src="https://cultura.am.gov.br/portal/wp-content/uploads/2019/04/como-chegar.png" style="width: 12px; height: 12px%;padding-left: -5pxpadding-left: -5px;padding-hight: -15px">\n\
+                </span>\n\
+                <a href="'+comochegar(inicio[valor].localization)+'">'+inicio[valor].localization+'</a>.\n\
+            </p>';
+            
+            return html;  
+        }
+
+        function tituloresultado(titulo){
+            var html;
+            if(titulo.length <21){
+                html = '<p style="padding-top:8px; font-size: 32px">'+titulo+'</p>';
+                return html
+            }else if(titulo.length <35){
+                html = '<p style="padding-top:3px; font-size: 20px">'+titulo+'</p>';
+                return html
+            }else{
+                html = '<p style="font-size: 13px">'+titulo+'</p>';
+                return html
+
+            }
+        }
+
+        function getcontent(){
+            
+                
+                    loadContent();
+                  
+        }
+
+        function selecaomes(local){
+            switch (local) {
+                 case '01':
+                    local = 'JAN';
+                    break;
+                case '02':
+                    local = 'FEV';
+                    break;
+                case '03':
+                    local = 'MAR';
+                    break;
+                case '04':
+                    local = 'ABR';
+                    break;
+                case '05':
+                    local = 'MAI';
+                    break;
+                case '06':
+                    local = 'JUN';
+                    break;
+                case '07':
+                    local = 'JUL';
+                    break;
+                case '08':
+                    local = 'AGO';
+                    break;
+                case '09':
+                    local = 'SET';
+                    break;
+                case '10':
+                    local = 'OUT';
+                    break;
+                case '11':
+                    local = 'NOV';
+                    break;
+                case '12':
+                    local = 'DEZ';
+                    break;
+            }
+            return local; 
+        }
+
+        function iconedata(data,hora){
+            data = data.split('/');
+            hora = hora.split(':');
+            var html;
+            let mes = selecaomes(data[1]);
+            html = '\n\
+            <b><p  align="right" style="margin-top: 0em;margin-bottom: 0em;font-size:50px;color:#29b55a;font-family:roboto">'+data[0]+'</p>\n\
+                <p align="right" style="margin-top: 0em;margin-bottom: 0em;font-size:30px;color:#29b55a;font-family:roboto">'+mes+'&nbsp;'+data[2]+'\n\
+                <p  align="right" style="margin-top: 0em;margin-bottom: 0em;font-size:30px;color:#29b55a;font-family:roboto">'+hora[0]+'h</p></b>';
+            return html;
+        }
+
+        function agenda_local(data){
+			var loop=0;
+			//console.log(data);
+            let count = 0;
+            let countColor = 0;
+            var titulo = [];
+            let i;
+            var html ='';
+            var  acho = 0;
+            let hexadecimais = ['#0e3e61', '#ff8000', '#59d4b6', '#ffb700'];
+            for(i=0;i<data.length;i++){
+                acho = 0;
+                var valor = data[i].agenda.length - 1 ;
+                let image = data[i].imagem_banner != null ? 'http://sistemas.cultura.am.gov.br'+data[i].imagem_banner : "<?php bloginfo('template_directory'); ?>";
+                let inicio = data[i].agenda[valor].dt_fim.split('/');				
+                var mensagem = "[wbcr_php_snippet id='7028']";
+               
+                if(mensagem == data[i].id){
+                    let icodia = iconedata(data[i].data_inicio,data[i].hora_inicio);
+                    data[i].description = data[i].description.split(/\n/).join("<br>");
+                    html = '\n\
+                    <head><title>'+data[i].titulo+'</title></head>\n\
+                    <div>\n\
+                        <div class="vc_col-lg-2"style="position: relative;float:left;"">\n\
+                            <h4 align="right" style="margin-top: 0em;margin-bottom: 0em">'+icodia+'</h4>\n\
+                        </div>\n\
+                        <div class="vc_col-lg-8" style="position: relative;float:left;">\n\
+                            <img src="'+image+'"  align="top" class="img-test">';
+                            //console.log(data[i].subcategory);
+                            if(data[i].subcategory=='Prêmio Encontro das Artes'){ //adicionar selo de Contemplado encontro das Artes
+                                html += '<img src="http://cultura.am.gov.br/portal/wp-content/uploads/2021/01/encontro-artes-8-1.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Prêmio Feliciano Lana'){ //adicionar selo de Contemplado feliciano lana
+                                html += '<img src="http://cultura.am.gov.br/portal/wp-content/uploads/2021/01/feliciano-lana-8-1.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Prêmio Manaus de Conexões Culturais'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/01/teste.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Prêmio Literário Gracildo Guimarães 2020 - Benjamin Constant'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/04/premio-literario-8.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Festival Cultural: Nossa arte, nossos costumes – Presidente Figueiredo'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/04/festival-cultural-8.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Lei Aldir Blanc: Premiação Cultural para pessoas físicas e jurídicas – Carauar'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/04/premio-cultural-8.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Lei Aldir Blanc em Parintins'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/04/parintins-8.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Lei Aldir Blanc em Barreirinha'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/04/barreirinha-8.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Prêmio Raimundo Geraldo Saraiva – Manacapuru'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/04/premio-raimundo-geraldo-8.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }else if (data[i].subcategory=='Prêmio Cultura e Arte Conectadas 2020 - Benjamin Constant'){ //adicionar selo Prêmio Manaus de Conexões Culturais
+                                html += '<img src="https://cultura.am.gov.br/portal/wp-content/uploads/2021/04/premio-cultura-e-arte-8.png"style="position:absolute; top:0px; left:10px; width:125px; height:125px"/>';
+                            }
+
+                            html +='<h2 align="left" style="margin-top: 0.5em;margin-bottom: 0.5em;font-size:30px;font-family:roboto">\n\
+                                <b>'+data[i].titulo+'</b>\n\
+                            </h2>';
+
+                    //meio
+                   
+                        if (data[i].tipo == "Transmissão On-line"){
+							
+							html += '\n\
+							<a style="margin-top:5%; color:green;font-size:18px" href="'+data[i].url_live+'" >\n\
+								<span class="meta-author meta-item">\n\
+									CADASTRE-SE NO EVENTO AQUI\n\
+								</span>\n\
+							</a><br>'; 
+							
+						}else{
+							if (data[i].inscricao){
+								
+								var ins_url = "https://sistemas.cultura.am.gov.br/sigec/eventos/inscricao?s="+data[i].inscricao;
+								
+								html += '\n\
+								<a style="margin-top:5%; color:green;font-size:18px" href="'+ins_url+'" >\n\
+									<span class="meta-author meta-item">\n\
+										INSCREVA-SE AQUI\n\
+									</span>\n\
+								</a><br>'; 
+														
+							}
+							
+						}
+							
+							
+						
+
+						let diaincioefim = filtrodiasdoevento(data[i].agenda,data[i].agenda[valor].dt_fim,valor);    
+						let localev = localevento(data[i].agenda,data[i].agenda[valor].localization.toLocaleUpperCase());
+						let pagamentourl = pagamento(data[i].url_pagamento,data[i].tipo);
+						let classificacao = fachaetaria(data[i].classificacao);
+						data[i].description = data[i].description.split(/\n/).join("<br>");
+						data[i].description = data[i].description.split('Agende agora a sua visita aqui!').join('<a href="https://sistemas.cultura.am.gov.br/sigec/agendamentoEspacos/create" target="_blank" style="color:green;">Agende agora a sua visita aqui!</a>');
+						html += '\n\
+						<p align="left" style="margin-top: 0.5em;margin-bottom: 0.5em;"><img src="http://cultura.am.gov.br/portal/wp-content/uploads/2019/04/evento-pago-gratuiito.png"  style="padding-left:6px">\n\
+							&nbsp;&nbsp;'+pagamentourl+'\n\
+						</p>\n\
+						<p align="left" style="margin-top: 0.5em;margin-bottom: 0.5em;">\n\
+							<img align="top"src="'+classificacao+'" style="width: 35px;height: 35px;" >&nbsp;&nbsp;&nbsp;'+data[i].classificacao+'\n\
+						</p>\n\
+						<b><p align="left" style="margin-top: 0.5em;margin-bottom: 0.5em;color:#29b55a;">Tipo: '+data[i].category+'</p></b>';
+                if (data[i].subcategory != null) {
+
+                    html += '\n\
+                        <b><p align="left" style="margin-top: 0.5em;margin-bottom: 0.5em;color:#29b55a;">'+ data[i].subcategory + '</p></b>\n\ ';
+
+                }
+                    html += '\n\
+                    '+ diaincioefim + '\n\
+                    <br><br>\n\
+                    <p align="justify"style="font-size:18px">'+data[i].description+'</p>\n\
+                    <div class="article-bottom-links article-share"><span class="title">compartilhar</span><ul>\n\
+                        <li class="facebook"><a title="facebook" onclick="window.open(\'http://www.facebook.com/sharer.php?u=https://cultura.am.gov.br/portal/evento/?id='+data[i].id+'\',\'Facebook\',\'width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+'\'); return false;"\n\
+                        href=\'http://www.facebook.com/sharer.php?u=https://cultura.am.gov.br/portal/evento/?id='+data[i].id+'\' role=\'link\'>\n\
+                        <span class="bdaia-io bdaia-io-facebook"></span>\n\
+                        <span class="soical-text"><small>Share on </small>Facebook</span></a></li>\n\
+                        <li class="twitter"><a title="twitter" onclick="window.open(\'http://twitter.com/share?url=https://cultura.am.gov.br/portal/evento/?id='+data[i].id+';text='+data[i].titulo+'\',\'Twitter share\',\'width=500,height=200,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+'\'); return false;"\n\
+                        href=\'http://twitter.com/share?url=https://cultura.am.gov.br/portal/evento/?id='+data[i].id+';text='+data[i].titulo+'\' role=\'link\'>\n\
+                        <span class="bdaia-io bdaia-io-twitter"></span>\n\
+                        <span class="soical-text"><small>Share on </small>Twitter</span></a></li>\n\
+                        <li class="whatsapp"><a href=\'whatsapp://send?text='+data[i].titulo+'%20-%20https://localhost/portal/evento/?id='+data[i].id+'\' role=\'link\'><span class="bdaia-io bdaia-io-whatsapp"></span></a> </li>\n\
+                        <li class="telegram">  <a href=\'tg://msg?text='+data[i].titulo+'%20-%20https://localhost/portal/evento/?id='+data[i].id+'\' role=\'link\'><span class="bdaia-io bdaia-io-telegram"></span></a> </li>\n\
+                    </div>\n\
+                    </a>\n\
+                    </a>\n\
+                    </div>\n\
+                <div>';
+                    return html;
+                }  
+
+            }
+        }
+        function loadContent(){
+
+            //console.log(mes);
+
+            //Recupera os dados Json da lista e monta o conteúdo
+            jQuery.ajax({
+                url: 'https://sistemas.cultura.am.gov.br/sigec/api/listartodaspautas',
+                data: {
+                format: 'json'
+                },
+                error: function(error) {
+                console.log('error', error);
+                },
+                dataType: 'json',
+                success: function(data) {
+                let html = '';
+                let agenda = data.pautas;
+                html =  agenda_local(agenda);
+                document.getElementById('agenda').innerHTML = (html.length > 0) ? html : null;       
+                },
+                type: 'GET'
+            });
+        }
+        getcontent() //carrega o conteúdo do Ajax
+    });
+</script>
