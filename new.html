@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
 
         </div>
@@ -63,7 +63,7 @@
 
     </div>
     <div class="divCard" id="divCard">
-        
+
     </div>
 
 </body>
@@ -72,32 +72,45 @@
 
 
 <script>
+    //aba de descrição
+    function show() {
+                document.querySelector('.hora').innerHTML = ''
+            }
+            function hide() {
+                document.querySelector('.hora').innerHTML = 'g'
+                console.log('FOI')
+            }
+
     var obj = {}
 
     function mostraEvento(value) {
         let html = '';
         var dias = value.split('/')
-
+       
         rawData = buscaSeteDias(dias[0], dias[1], dias[2])
-        rawData.forEach(element => {
-            console.log(element.espaco);
-            html += `<div class="divCard">
+        rawData.forEach(element => { 
+            console.log(element.espaco)
+            html += `<div class="divCardd">
                 <div class="divCardT">
-                    <div style=" background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});
-                    "class="divCardBack" >
+                    <div style="background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});"
+                    class="divCardBack">
                     </div>
                     <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">${element.filter=}</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
+                        <div style='background-color:${element.cor};' class="CardDual">
+                            <div>
+                                <p class="instituicao">Corpo de Dança do Amazonas</p>
+                                <h3 class="titulo">${element.titulo}</h3>
+                                <p class="data">21 Setembro 2022</p>
+                                <p class="local"></p>
+                                <p class="hora">20h</p>
+                                <div class="classif">
+                                    <p class="preco">${element.price} Entrada Gratuita</p>
+                                    <img class="clasificacao" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="expand" onmouseover="show()" onmouseleave="hide()">
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,8 +141,8 @@
 
     function buscaSeteDias(dia, mes, ano) {
         var hoje = new Date
-            // var diaHoje = hoje.getDay
-            // var mesHoje = hoje.getMonth
+        // var diaHoje = hoje.getDay
+        // var mesHoje = hoje.getMonth
         var diaHoje = "15"
         var mesHoje = "02"
         var hojeInteiro = parseInt(diaHoje);
@@ -140,7 +153,7 @@
         const filterData = Object.values(pautas)
             .filter(pauta => {
                 const controleEspaco = Object.values(pauta.espaco).filter(espaco => {
-                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro-1).toString()}`).filter(data => data <= `${ano}-${mesHoje}-${(hojeInteiro+8).toString()}`);
+                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro - 1).toString()}`).filter(data => data <= `${ano}-${mesHoje}-${(hojeInteiro + 8).toString()}`);
                     return controleAgenda.length;
                 });
                 return controleEspaco.length;
@@ -164,7 +177,7 @@
         const filterData = Object.values(pautas)
             .filter(pauta => {
                 const controleEspaco = Object.values(pauta.espaco).filter(espaco => {
-                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro-1).toString()}`).filter(data => data <= `${ano}-${(mesInteiro+1).toString()}-${(diaHoje)}`);
+                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro - 1).toString()}`).filter(data => data <= `${ano}-${(mesInteiro + 1).toString()}-${(diaHoje)}`);
                     return controleAgenda.length;
                 });
                 return controleEspaco.length;
@@ -181,12 +194,12 @@
             data: {
                 format: 'json'
             },
-            error: function(error) {
+            error: function (error) {
                 console.log('error', error);
             },
             dataType: 'json',
 
-            success: function(data) {
+            success: function (data) {
                 Object.assign(obj, data);
                 console.log("ok")
 
@@ -199,7 +212,7 @@
 
 
 
-    $(function() {
+    $(function () {
         $("#calendario").datepicker({
 
             dateFormat: 'dd/mm/yy',
