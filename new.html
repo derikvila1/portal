@@ -55,123 +55,16 @@
                     </div>
                 </div>
             </div>
-            <div class="divCard">
-                <div class="divCardT">
-                    <div class="divCardBack">
-                    </div>
-                    <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">Teatro Amazonas</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="divCardT">
-                    <div class="divCardBack">
-                    </div>
-                    <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">Teatro Amazonas</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="divCardT">
-                    <div class="divCardBack">
-                    </div>
-                    <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">Teatro Amazonas</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="divCardT">
-                    <div class="divCardBack">
-                    </div>
-                    <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">Teatro Amazonas</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="divCardT">
-                    <div class="divCardBack">
-                    </div>
-                    <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">Teatro Amazonas</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="divCardT">
-                    <div class="divCardBack">
-                    </div>
-                    <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">Teatro Amazonas</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
 
         </div>
 
 
     </div>
-    <div id="card"> </div>
+    <div class="divCard" id="divCard">
+        
+    </div>
 
 </body>
 
@@ -187,9 +80,31 @@
 
         rawData = buscaSeteDias(dias[0], dias[1], dias[2])
         rawData.forEach(element => {
-            html += element.category;
+            console.log(element.espaco);
+            html += `<div class="divCard">
+                <div class="divCardT">
+                    <div style=" background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});
+                    "class="divCardBack" >
+                    </div>
+                    <div class="Cardif">
+                        <p class="instituicao">Corpo de Dança do Amazonas</p>
+                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
+                        <p class="data">21 Setembro 2022</p>
+                        <p class="local">${element.filter=}</p>
+                        <p class="hora">20h</p>
+                        <div class="classif">
+                            <p class="preco">Entrada Gratuita</p>
+                            <img class="clasificacao" src="" alt="">
+                        </div>
+                        <div class="expand">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>`
         });
-        document.getElementById('card').innerHTML = (html.length > 0) ? html : null;
+        document.getElementById('divCard').innerHTML = (html.length > 0) ? html : null;
     }
 
     function agenda_local(dia, mes, ano) {
