@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
 
         </div>
@@ -63,7 +63,7 @@
 
     </div>
     <div class="divCard" id="divCard">
-        
+
     </div>
 
 </body>
@@ -72,12 +72,21 @@
 
 
 <script>
+    //aba de descrição
+    function show() {
+                document.querySelector('.hora').innerHTML = ''
+            }
+            function hide() {
+                document.querySelector('.hora').innerHTML = 'g'
+                console.log('FOI')
+            }
+
     var obj = {}
 
     function mostraEvento(value) {
         let html = '';
         var dias = value.split('/')
-
+       
         rawData = buscaSeteDias(dias[0], dias[1], dias[2])
         rawData.forEach(element => {
             var monthNames= ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
@@ -88,25 +97,32 @@
            const dataraw = Object.keys(objraw.agenda)
        
            var teste = dataraw[0].split('-')
-           console.log(timeraw3)
+        
            
+
+    
+
             html += `<div class="divCard">
                 <div class="divCardT">
-                    <div style=" background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});
-                    "class="divCardBack" >
+                    <div style="background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});"
+                    class="divCardBack">
                     </div>
                     <div class="Cardif">
-                        <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">${titulo}</h3>
-                        <p class="data">${teste[2]} ${monthNames[parseInt(teste[1])-1]} ${teste[0]}</p>
-                        <p class="local">${nomeEspaco}</p>
-                        <p class="hora">20h</p>
-                        <div class="classif">
-                            <p class="preco">Entrada Gratuita</p>
-                            <img class="clasificacao" src="" alt="">
-                        </div>
-                        <div class="expand">
-                            <div></div>
+                        <div style='background-color:${element.cor};' class="CardDual">
+                            <div>
+                                <p class="instituicao">Corpo de Dança do Amazonas</p>
+                                <h3 class="titulo">${titulo}</h3>
+                                <p class="data">${teste[2]} ${monthNames[parseInt(teste[1])-1]} ${teste[0]}<</p>
+                                <p class="local">${nomeEspaco}</p>
+                                <p class="hora">20h</p>
+                                <div class="classif">
+                                    <p class="preco">${element.price} Entrada Gratuita</p>
+                                    <img class="clasificacao" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="expand" onmouseover="show()" onmouseleave="hide()">
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,7 +165,7 @@
         const filterData = Object.values(pautas)
             .filter(pauta => {
                 const controleEspaco = Object.values(pauta.espaco).filter(espaco => {
-                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro-1).toString()}`).filter(data => data <= `${ano}-${mesHoje}-${(hojeInteiro+8).toString()}`);
+                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro - 1).toString()}`).filter(data => data <= `${ano}-${mesHoje}-${(hojeInteiro + 8).toString()}`);
                     return controleAgenda.length;
                 });
                 return controleEspaco.length;
@@ -173,7 +189,7 @@
         const filterData = Object.values(pautas)
             .filter(pauta => {
                 const controleEspaco = Object.values(pauta.espaco).filter(espaco => {
-                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro-1).toString()}`).filter(data => data <= `${ano}-${(mesInteiro+1).toString()}-${(diaHoje)}`);
+                    const controleAgenda = Object.keys(espaco.agenda).filter(data => data > `${ano}-${mesHoje}-${(hojeInteiro - 1).toString()}`).filter(data => data <= `${ano}-${(mesInteiro + 1).toString()}-${(diaHoje)}`);
                     return controleAgenda.length;
                 });
                 return controleEspaco.length;
@@ -190,12 +206,12 @@
             data: {
                 format: 'json'
             },
-            error: function(error) {
+            error: function (error) {
                 console.log('error', error);
             },
             dataType: 'json',
 
-            success: function(data) {
+            success: function (data) {
                 Object.assign(obj, data);
                 console.log("ok")
 
@@ -208,7 +224,7 @@
 
 
 
-    $(function() {
+    $(function () {
         $("#calendario").datepicker({
 
             dateFormat: 'dd/mm/yy',
