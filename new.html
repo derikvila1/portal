@@ -73,13 +73,13 @@
 
 <script>
     //aba de descrição
-    function show() {
-                document.querySelector('.hora').innerHTML = ''
-            }
-            function hide() {
-                document.querySelector('.hora').innerHTML = 'g'
-                console.log('FOI')
-            }
+    // function show() {
+    //             document.querySelector('.hora').innerHTML = ''
+    //         }
+    //         function hide() {
+    //             document.querySelector('.hora').innerHTML = 'g'
+    //             console.log('FOI')
+    //         }
 
     var obj = {}
 
@@ -95,9 +95,14 @@
            const nomeEspaco = objraw.espaco
            const titulo = element.titulo
            const dataraw = Object.keys(objraw.agenda)
-       
            var teste = dataraw[0].split('-')
-        
+           var ts = Object.values(objraw.agenda)
+           ts = ts[0]
+           ts= ts[0]
+           ts = ts.hora_inicio
+           ts= ts.split(':')
+         
+            
            
 
     
@@ -113,9 +118,9 @@
                                 <h3 class="titulo">${titulo}</h3>
                                 <p class="data">${teste[2]} ${monthNames[parseInt(teste[1])-1]} ${teste[0]}</p>
                                 <p class="local">${nomeEspaco}</p>
-                                <p class="hora">20h</p>
+                                <p class="hora">${ts[0]}h</p>
                                 <div class="classif">
-                                    <p class="preco">${element.price} Entrada Gratuita</p>
+                                    <p class="preco">${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
                                     <img class="clasificacao" src="" alt="">
                                 </div>
                             </div>
