@@ -80,7 +80,16 @@
 
         rawData = buscaSeteDias(dias[0], dias[1], dias[2])
         rawData.forEach(element => {
-            console.log(element.espaco);
+            var monthNames= ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+            const raw =  Object.values(element.espaco)
+           const objraw = raw[0]
+           const nomeEspaco = objraw.espaco
+           const titulo = element.titulo
+           const dataraw = Object.keys(objraw.agenda)
+       
+           var teste = dataraw[0].split('-')
+           console.log(timeraw3)
+           
             html += `<div class="divCard">
                 <div class="divCardT">
                     <div style=" background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});
@@ -88,9 +97,9 @@
                     </div>
                     <div class="Cardif">
                         <p class="instituicao">Corpo de Dança do Amazonas</p>
-                        <h3 class="titulo">TA | Sobre Ser Grande</h3>
-                        <p class="data">21 Setembro 2022</p>
-                        <p class="local">${element.filter=}</p>
+                        <h3 class="titulo">${titulo}</h3>
+                        <p class="data">${teste[2]} ${monthNames[parseInt(teste[1])-1]} ${teste[0]}</p>
+                        <p class="local">${nomeEspaco}</p>
                         <p class="hora">20h</p>
                         <div class="classif">
                             <p class="preco">Entrada Gratuita</p>
@@ -130,7 +139,7 @@
         var hoje = new Date
             // var diaHoje = hoje.getDay
             // var mesHoje = hoje.getMonth
-        var diaHoje = "15"
+        var diaHoje = "1"
         var mesHoje = "02"
         var hojeInteiro = parseInt(diaHoje);
 
