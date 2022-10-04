@@ -20,12 +20,26 @@
     font-family: "Futura";
     font-weight: bolder;
     font-size: 2.5rem;
-    margin: 0;
+    margin: 1rem 0;
 }
 
 .diretorio {
+    display: inline-flex;
     font-weight: 200;
-    font-family: sans-serif;
+    font-family: 'NormalFutura';
+    font-size: 1.1rem;
+    position: relative;
+
+}
+.diretorio::before{
+    content: '';
+    top: 5;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    border-bottom: 1px solid;
+    border-radius: 2px;
 }
 
 .Dflex {
@@ -34,7 +48,7 @@
 }
 
 .agendaEventos {
-    margin-right: 1rem;
+    margin-right: 2rem;
     font-family: 'Futura';
     font-size: 1.5rem;
     position: relative;
@@ -53,6 +67,13 @@
 
 
 /*Periodo*/
+/*Mobile*/
+@media (max-width:768px) {
+    .divCal{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 .divCal {
     display: flex;
@@ -74,9 +95,62 @@
 
 .divCalLab {
     font-family: 'NormalFutura';
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-weight: 600;
     font-size: 1.2rem;
+}
+
+input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+label {
+  position: relative;
+  padding-left: 1.7em;
+  display: inline-block;
+}
+label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.0em;
+  width: 1.0em;
+  background: #FFF;
+  margin-right: 0.5em;
+  border: 1px solid #999;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0.75em;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: #FFF;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+label:focus::before, .checkbox label:hover::before {
+  background: #DDD;
+}
+input:checked + label::before {
+  background: #6566AA;
+  border-color: #6566AA;
+}
+input:checked + label::after {
+  opacity: 1;
 }
 
 .divCalGeneros {
@@ -91,20 +165,24 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.MarginCardFix{
+    margin:  0 auto;
+}
+#divCard{
     margin: 0 6.5%;
     margin-top: 3rem;
+    max-width: 1300px;
 }
-
 .divCardBack {
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 240px;
     height: 240px;
 }
 
 .Cardif {
-    
     max-width: 240px;
     height: 300px;
 }
