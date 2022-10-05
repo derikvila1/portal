@@ -174,30 +174,28 @@ input:checked + label::after {
 
 /*Cards*/
 
-.divCard {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+
 .MarginCardFix{
     margin:  0 auto;
 }
 #divCard{
-    margin: 0 6.5%;
+    margin: 0 auto;
     margin-top: 3rem;
-    max-width: 1300px;
+    max-width: 1281.59;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .divCardBack {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 240px;
+    width: 320.3975px;
     height: 240px;
 }
 
 .Cardif {
-    max-width: 240px;
+    max-width: 320.3975;
     height: 300px;
 }
 .CardDual{
