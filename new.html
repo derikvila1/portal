@@ -92,7 +92,7 @@
         let html = '';
         var dias = value.split('/')
        
-        rawData = buscaSeteDias(dias[0], dias[1], dias[2])
+        rawData = agenda_local(dias[0], dias[1], dias[2])
         rawData.forEach(element => {
             var monthNames= ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
             const raw =  Object.values(element.espaco)
@@ -106,7 +106,33 @@
            ts= ts[0]
            ts = ts.hora_inicio
            ts= ts.split(':')
-         
+           const faixaEtaria = element.classificacao
+            const faixaEtaria2 = faixaEtaria.split(" ")
+            let faixaEtaria3 = ""
+         console.log(faixaEtaria2)
+         if(faixaEtaria2[0] === "Livre"){
+            faixaEtaria3 = "livre"
+         }
+         else{
+            if(faixaEtaria2[5] == "seis"){
+                faixaEtaria3 = 'menores_6'
+            }
+            if(faixaEtaria2[5] == "dez"){
+                faixaEtaria3 = 'menores_10'
+            }
+            if(faixaEtaria2[5] == "doze"){
+                faixaEtaria3 = 'menores_12'
+            }
+            if(faixaEtaria2[5] == "catorze"){
+                faixaEtaria3 = 'menores_14'
+            }
+            if(faixaEtaria2[5] == "dezesseis"){
+                faixaEtaria3 = 'menores_16'
+            }
+            if(faixaEtaria2[5] == "dezoito"){
+                faixaEtaria3 = 'menores_18'
+            }
+         }
             
            
 
@@ -138,7 +164,7 @@
                                 <div class="classif">
                                     <span class="material-symbols-outlined">paid</span>
                                     <p class="preco">${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
-                                    <img class="clasificacao" src="" alt="">
+                                    <img class="clasificacao" src="https://sistemas.cultura.am.gov.br/sigec/themes/sigec/img/classificacao/${faixaEtaria3}.png" alt="">
                                 </div>
 
                                 <div >
@@ -182,8 +208,8 @@
         var hoje = new Date
             // var diaHoje = hoje.getDay
             // var mesHoje = hoje.getMonth
-        var diaHoje = "1"
-        var mesHoje = "02"
+        var diaHoje = "4"
+        var mesHoje = "09"
         var hojeInteiro = parseInt(diaHoje);
 
         const {
