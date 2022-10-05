@@ -179,11 +179,7 @@ input:checked + label::after {
 .MarginCardFix{
     margin:  0 auto;
 }
-@media (max-width: 768px) {
-    .mainDiv{
-        flex-direction: column;
-    }
-  }
+
 .mainDiv{
     margin: 0 auto;
     margin-top: 3rem;
