@@ -100,6 +100,15 @@
     font-size: 1.2rem;
 }
 
+.icons{
+    display: flex;
+    flex-direction: row;
+}
+.classif{
+    display: flex;
+    flex-direction: row; 
+}
+
 input {
   border: 0;
   clip: rect(0 0 0 0);
