@@ -73,6 +73,7 @@
         display: flex;
         flex-direction: column;
     }
+    
 }
 
 .divCal {
@@ -178,7 +179,12 @@ input:checked + label::after {
 .MarginCardFix{
     margin:  0 auto;
 }
-#divCard{
+@media (max-width: 768px) {
+    .mainDiv{
+        flex-direction: column;
+    }
+  }
+.mainDiv{
     margin: 0 auto;
     margin-top: 3rem;
     max-width: 1281.59;
@@ -186,6 +192,7 @@ input:checked + label::after {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .divCardBack {
     background-position: center;
     background-size: cover;
@@ -258,7 +265,7 @@ input:checked + label::after {
     color: white;
     font-family: 'NormalFutura';
     font-size: 0.9rem;
-    padding: 0 6.5%;
+    padding: 0 3.5%;
 }
 
 .expand {
