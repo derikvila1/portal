@@ -103,10 +103,15 @@
 .icons{
     display: flex;
     flex-direction: row;
+    padding-left: 6.5%;
+}
+.icons span{
+    width: 10px;
 }
 .classif{
     display: flex;
     flex-direction: row; 
+    padding-left: 6.5%;
 }
 
 input {
@@ -268,10 +273,3 @@ input:checked + label::after {
     margin-top: 1rem;
 }
 
-.expand div {
-    color: white;
-    background-color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-}
