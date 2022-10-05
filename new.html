@@ -78,13 +78,13 @@
 
 <script>
     //aba de descrição
-    function show() {
-                document.querySelector('.hora').innerHTML = ''
-            }
-            function hide() {
-                document.querySelector('.hora').innerHTML = 'g'
-                console.log('FOI')
-            }
+    // function show() {
+    //             document.querySelector('.hora').innerHTML = ''
+    //         }
+    //         function hide() {
+    //             document.querySelector('.hora').innerHTML = 'g'
+    //             console.log('FOI')
+    //         }
 
     var obj = {}
 
@@ -140,6 +140,10 @@
                                     <p class="preco">${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
                                     <img class="clasificacao" src="" alt="">
                                 </div>
+
+                                <div >
+                                    <p class="descricao">${element.description}</p>
+                                    </div>
                             </div>
                             <div class="expand" onmouseover="show()" onmouseleave="hide()">
                                 <div>
