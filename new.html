@@ -109,7 +109,6 @@
            const faixaEtaria = element.classificacao
             const faixaEtaria2 = faixaEtaria.split(" ")
             let faixaEtaria3 = ""
-         console.log(faixaEtaria2)
          if(faixaEtaria2[0] === "Livre"){
             faixaEtaria3 = "livre"
          }
@@ -263,20 +262,13 @@
                 console.log('error', error);
             },
             dataType: 'json',
-
             success: function (data) {
                 Object.assign(obj, data);
                 console.log("ok")
-
             },
             type: 'GET'
         });
-
-
     }
-
-
-
     $(function () {
         $("#calendario").datepicker({
 
