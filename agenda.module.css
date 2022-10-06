@@ -11,6 +11,10 @@
     font-family: "NormalFutura";
     src: url("./fonts/FuturaPTLight.otf");
 }
+@font-face {
+    font-family: "HeavycrFutura";
+    src: url("./fonts/FuturaPTHeavyOblique.otf");
+}
 
 
 /*Titulo*/
@@ -308,7 +312,7 @@ input:checked + label::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'NormalFutura';
+    font-family:"HeavycrFutura";
     stop-opacity: initial;
     cursor: pointer;
     transition: all .2s ;
@@ -316,3 +320,10 @@ input:checked + label::after {
 .moreif:hover{
     font-size: 17px;
 }
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 200,
+    'opsz' 40
+  }
