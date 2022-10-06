@@ -31,16 +31,16 @@
             <div class="divCal">
                 <form class="divCalForm">
                     <h3 class="divCalPeriodo">Período</h3>
-                    <input class="divCalCheck" type="radio" id="hoje" name="date_type" value="hoje">
+                    <input onclick="mudaTipo('hoje'), mostraEvento(diaGlobal)"  class="divCalCheck" type="radio" id="hoje" name="date_type" value="hoje">
                     <label class="divCalLab" for="hoje">Hoje</label><br>
-                    <input class="divCalCheck" type="radio" id="prox_7_dias" name="date_type" value="prox_7_dias">
+                    <input onclick="mudaTipo('seteDias'), mostraEvento(diaGlobal)" class="divCalCheck" type="radio" id="prox_7_dias" name="date_type" value="prox_7_dias">
                     <label class="divCalLab" for="prox_7_dias">Próximos 7 dias</label><br>
-                    <input class="divCalCheck" type="radio" id="prox_30_dias" name="date_type" value="prox_30_dias">
+                    <input onclick="mudaTipo('trintaDias'), mostraEvento(diaGlobal)" class="divCalCheck" type="radio" id="prox_30_dias" name="date_type" value="prox_30_dias">
                     <label class="divCalLab" for="prox_30_dias">Próximos 30 dias</label>
 
                 </form>
                 <div class='divCalendario'>
-                    <div onchange="mostraEvento(value)" id="calendario"></div>
+                    <div onchange="mudaDia(value), mostraEvento(value)" id="calendario"></div>
 
                 </div>
 
@@ -48,8 +48,10 @@
                     <h3 class="divCalPeriodo">Generos</h3>
                     <div class="divCalGenerosCK">
                         <form>
+                            <input type="radio" id="todos" name="category" value="todos" checked="true">
+                            <label class="divCalLab" for="todos">Todos</label><br>
                             <input type="radio" id="musica" name="category" value="musica" checked="true">
-                            <label class="divCalLab" for="musica">Música</label><br>
+                            <label class="divCalLab" for="musica">Música</label>
                             <input type="radio" id="teatro" name="category" value="teatro">
                             <label class="divCalLab" for="teatro">Teatro</label><br>
                             <input type="radio" id="danca" name="category" value="danca">
@@ -88,13 +90,41 @@
     //             console.log('FOI')
     //         }
 
+    let tipoPeriodo = ""
+    let diaGlobal =  ""
+
+    function mudaTipo(tipo){
+        tipoPeriodo = tipo
+    }
+
+    function mudaDia(value){
+        diaGlobal = value
+        console.log(diaGlobal)
+        console.log(value)
+    }
+
     var obj = {}
     let i = 0 
     function mostraEvento(value) {
         let html = '';
         var dias = value.split('/')
-       
+    
+        if(tipoPeriodo == "hoje"){
+
+            rawData = agenda_local(dias[0], dias[1], dias[2])
+        }
+        if(tipoPeriodo == "seteDias"){
+
         rawData = buscaSeteDias(dias[0], dias[1], dias[2])
+        }
+        if(tipoPeriodo == "trintaDias"){
+
+        rawData = buscaTrintaDias(dias[0], dias[1], dias[2])
+        }
+
+
+
+
         rawData.forEach(element => {
             var monthNames= ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
             const raw =  Object.values(element.espaco)
@@ -144,14 +174,8 @@
             i=0
          }
 
-
-           
-        
-            
-           
-
-    
-
+        console.log(element.category)
+                
             html += `<div>
                 <div class="divCardT">
                     <div style="background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});"
@@ -176,9 +200,8 @@
                                     <p class="local">${nomeEspaco}</p>
                                 </div>
 
-                                
                                 <div class="classif">
-                                    <p class="preco"><span class="material-symbols-outlined">paid</span>${element.price === "000"? "Evento gratuito ou links Ingressos á venda ou Inscrições": "Evento pago"}</p>
+                                    <p class="preco"><span class="material-symbols-outlined">paid</span>${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
                                     <img class="clasificacao" src="https://sistemas.cultura.am.gov.br/sigec/themes/sigec/img/classificacao/${faixaEtaria3}.png" alt="">
                                 </div>
 
