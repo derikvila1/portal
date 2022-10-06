@@ -87,12 +87,12 @@
     //         }
 
     var obj = {}
-
+    let i = 0 
     function mostraEvento(value) {
         let html = '';
         var dias = value.split('/')
        
-        rawData = agenda_local(dias[0], dias[1], dias[2])
+        rawData = buscaSeteDias(dias[0], dias[1], dias[2])
         rawData.forEach(element => {
             var monthNames= ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
             const raw =  Object.values(element.espaco)
@@ -109,6 +109,8 @@
            const faixaEtaria = element.classificacao
             const faixaEtaria2 = faixaEtaria.split(" ")
             let faixaEtaria3 = ""
+            let listaCores = ["#6667ab","#003e15","#dc4011","#5e3f32","#e25989","#fba612","#58cad4","#6667ab","#003e15"]
+
          if(faixaEtaria2[0] === "Livre"){
             faixaEtaria3 = "livre"
          }
@@ -132,6 +134,18 @@
                 faixaEtaria3 = 'menores_18'
             }
          }
+         
+         if(i < 8){
+            console.log(i)
+            i++
+         }
+         else{
+            i=0
+         }
+
+
+           
+        
             
            
 
@@ -143,7 +157,7 @@
                     class="divCardBack">
                     </div>
                     <div class="Cardif">
-                        <div style='background-color:${element.cor};' class="CardDual">
+                        <div style='background-color:${listaCores[i]};' class="CardDual">
                             <div>
                                 <h3 class="titulo">${titulo}</h3>
 
@@ -180,6 +194,8 @@
                 </div>
                 
             </div>`
+
+
         });
         document.getElementById('divCard').innerHTML = (html.length > 0) ? html : null;
     }
@@ -207,8 +223,8 @@
         var hoje = new Date
             // var diaHoje = hoje.getDay
             // var mesHoje = hoje.getMonth
-        var diaHoje = "4"
-        var mesHoje = "09"
+        var diaHoje = "15"
+        var mesHoje = "06"
         var hojeInteiro = parseInt(diaHoje);
 
         const {
