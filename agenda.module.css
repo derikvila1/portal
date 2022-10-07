@@ -120,6 +120,7 @@
     margin-top: 1rem;
     font-weight: 600;
     font-size: 1.2rem;
+    width: 173px;
 }
 
 .icons{
@@ -136,7 +137,12 @@
     flex-direction: row; 
     padding: 0 3.5%;
 }
-
+.divCalLocal{
+    font-family: 'Futura';
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+/*Generos*/
 input {
   border: 0;
   clip: rect(0 0 0 0);
@@ -147,12 +153,12 @@ input {
   position: absolute;
   width: 1px;
 }
-label {
+.divCalLab {
   position: relative;
   padding-left: 1.7em;
   display: inline-block;
 }
-label::before {
+.divCalLab::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -168,7 +174,7 @@ label::before {
   left: 0;
   transform: translate(0, -50%);
 }
-label::after {
+.divCalLab::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -179,20 +185,21 @@ label::after {
   opacity: 0;
   transition: all 0.2s ease;
 }
-label:focus::before, .checkbox label:hover::before {
+.divCalLab:focus::before, .checkbox .divCalLab:hover::before {
   background: #DDD;
 }
-input:checked + label::before {
+input:checked + .divCalLab::before {
   background: #6566AA;
   border-color: #6566AA;
 }
-input:checked + label::after {
+input:checked + .divCalLab::after {
   opacity: 1;
 }
 
 .divCalGeneros {
     margin-top: 0;
 }
+
 
 
 /*Cards*/
@@ -270,10 +277,14 @@ input:checked + label::after {
 .local {
     margin: 0.3rem 0;
     padding: 0;
-    color: white;
+    color: black;
     font-family: 'NormalFutura';
     font-size: 0.9rem;
     padding: 0 6.5%;
+    max-width: 200px;
+}
+.localsp{
+    display: flex;
 }
 
 .hora {
