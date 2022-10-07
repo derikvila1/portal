@@ -38,7 +38,6 @@
                     <label class="divCalLab" for="prox_7_dias">Próximos 7 dias</label><br>
                     <input onclick="mudaTipo('trintaDias'), mostraEvento(diaGlobal)" class="divCalCheck" type="radio" id="prox_30_dias" name="date_type" value="prox_30_dias">
                     <label class="divCalLab" for="prox_30_dias">Próximos 30 dias</label>
-
                 </form>
                 <div class='divCalendario'>
                     <div onchange="mudaDia(value), mostraEvento(value)" id="calendario"></div>
@@ -141,17 +140,9 @@
 
 
 <script>
-    //aba de descrição
-    // function show() {
-    //             document.querySelector('.hora').innerHTML = ''
-    //         }
-    //         function hide() {
-    //             document.querySelector('.hora').innerHTML = 'g'
-    //             console.log('FOI')
-    //         }
-
     let tipoPeriodo = ""
-    let diaGlobal =  ""
+    let diaGlobal =  "" 
+
     $('.ExibicaoPage').hide()
     let EventoButton = $('.agendaEventos')
     let ExibicaoButton = $('.agendaExposicoes')
