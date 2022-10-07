@@ -250,7 +250,7 @@
 
         console.log(element.category)
         
-        if(element.category == tipoCategoria){
+        if(tipoCategoria == "Todos"){
 
             html += `<div>
                 <div class="divCardT">
@@ -297,8 +297,56 @@
                         </div>
                     </div>
                 </div>
-                
             </div>`
+        }else{
+            if(element.category == tipoCategoria){
+                html += `<div>
+                <div class="divCardT">
+                    <div style="background-image: url(https://sistemas.cultura.am.gov.br${element.imagem_banner});"
+                    class="divCardBack">
+                    </div>
+                    <div class="Cardif">
+                        <div style='background-color:${listaCores[i]};' class="CardDual">
+                            <div>
+                                <h3 class="titulo">${titulo}</h3>
+                                <div class="icons">
+                                    <span class="material-symbols-rounded">bookmark</span>
+                                    <p class="categoria">${element.category}</p>
+                                </div>
+                                <div class="dateAndTime">
+                                    <div class="icons datetime">
+                                        <span class="material-symbols-outlined icon-d">event_upcoming</span>
+                                        <p class="data">${teste[2]} ${monthNames[parseInt(teste[1])-1]} ${teste[0]}</p>
+                                    </div>
+                                    <div class="icons datetime">
+                                        <span class="material-symbols-rounded icon-d">schedule</span>
+                                        <p class="hora">${ts[0]}h</p>
+                                    </div> 
+                                </div>
+                                <div class="icons">
+                                    <span class="material-symbols-rounded">location_on</span>
+                                    <p class="local">${nomeEspaco}</p>
+                                </div>
+
+                                <div class="classif">
+                                    <p class="preco"><span class="material-symbols-rounded">paid</span>${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
+                                    <img class="clasificacao" src="https://sistemas.cultura.am.gov.br/sigec/themes/sigec/img/classificacao/${faixaEtaria3}.png" alt="">
+                                </div>
+
+                                <div >
+                                    <p class="descricao"></p>
+                                    </div>
+                            </div>
+                            <div class="expand" onmouseover="show()" onmouseleave="hide()">
+                                <div>
+                                    <p class='moreif'><span class="material-symbols-outlined">add_circle</span>Mais Informações</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+            }
         }
 
 
