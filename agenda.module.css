@@ -419,3 +419,16 @@ input:checked + label::after {
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
   }
+  @media (max-width:768px) {
+    .ExibicaoCard{
+        flex-direction: column;
+    }
+    .ExibicaoInf{
+        width: 330px;
+        height: 360px;
+    }
+    .ExibicaoImg {
+        width: 360px;
+        height: 300px;
+    }
+}
