@@ -57,6 +57,10 @@
     font-size: 1.5rem;
     cursor: pointer;
     position: relative;
+    transition: all .2s ;
+}
+.agendaEventos:hover{
+    color: rgb(94, 94, 94);
 }
 .agendaExposicoes{
     margin-right: 2rem;
@@ -64,6 +68,9 @@
     font-size: 1.5rem;
     cursor: pointer;
     position: relative;
+}
+.agendaExposicoes:hover{
+    color: rgb(94, 94, 94);
 }
 
 .active {
@@ -361,7 +368,7 @@ input:checked + label::after {
   .ExibicaoImg {
     width: 400px;
     height: 300px;
-    background-image:url("https://st2.depositphotos.com/1025323/6556/i/950/depositphotos_65563221-stock-photo-realms-of-inner-paint.jpg");
+    background-image:url("https://ceugaleria.com.br/galeria/wp-content/uploads/2019/11/Conheca-5-belas-artes-famosas-na-histo%CC%81ria-da-arte-noite-estrelada-ceu-galeria.jpg");
   }
   .ExibicaoInf{
     width: 700px;
