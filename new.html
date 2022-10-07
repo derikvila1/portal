@@ -185,6 +185,10 @@
                         <div style='background-color:${listaCores[i]};' class="CardDual">
                             <div>
                                 <h3 class="titulo">${titulo}</h3>
+                                <div class="icons">
+                                    <span class="material-symbols-rounded">bookmark</span>
+                                    <p class="categoria">${element.category}</p>
+                                </div>
                                 <div class="dateAndTime">
                                     <div class="icons datetime">
                                         <span class="material-symbols-outlined icon-d">event_upcoming</span>
@@ -201,7 +205,7 @@
                                 </div>
 
                                 <div class="classif">
-                                    <p class="preco"><span class="material-symbols-outlined">paid</span>${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
+                                    <p class="preco"><span class="material-symbols-rounded">paid</span>${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
                                     <img class="clasificacao" src="https://sistemas.cultura.am.gov.br/sigec/themes/sigec/img/classificacao/${faixaEtaria3}.png" alt="">
                                 </div>
 
