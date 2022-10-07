@@ -44,7 +44,7 @@
 
                 </div>
 
-                <div>
+                <div class="Generos">
                     <h3 class="divCalPeriodo">Generos</h3>
                     <div class="divCalGenerosCK">
                         <form>
@@ -58,6 +58,39 @@
                             <label class="divCalLab" for="danca">Dança</label>
                             <input type="radio" id="palestra" onclick="mudaTipoCategoria(value)" name="category" value="Palestra">
                             <label class="divCalLab" for="palestra">Palestra</label>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="Local">
+                    <h3 class="divCalLocal">Local</h3>
+                    <div class="divCalLocalCK">
+                        <form class="localsp">
+                            <div>
+                                <input type="radio" id="palaceteProvincial" name="local" value="palaceteProvincial" >
+                                <label class="divCalLab" for="palaceteProvincial">Palacete Provincial</label><br>
+                                <input type="radio" id="palacioRioNegro" name="local" value="palacioRioNegro">
+                                <label class="divCalLab" for="palacioRioNegro">Palácio Rio Negro</label>
+                                <input type="radio" id="palacioDaJustica" name="local" value="palacioDaJustica">
+                                <label class="divCalLab" for="palacioDaJustica">Palácio da Justiça</label><br>
+                                <input type="radio" id="povosDaAmazonia" name="local" value="povosDaAmazonia">
+                                <label class="divCalLab" for="povosDaAmazonia">Povos da Amazônia</label>
+                                <input type="radio" id="usinaChaminé" name="local" value="usinaChaminé">
+                                <label class="divCalLab" for="usinaChaminé">Usina Chaminé</label>
+                                
+                            </div>
+                            <div>
+                                <input type="radio" id="casaDasArtes" name="local" value="casaDasArtes">
+                                <label class="divCalLab" for="casaDasArtes">Casa das Artes</label>
+                                <input type="radio" id="galeriaDoLargo" name="local" value="galeriaDoLargo">
+                                <label class="divCalLab" for="galeriaDoLargo">Galeria do Largo</label>
+                                <input type="radio" id="sambodromoLiceu" name="local" value="sambodromoLiceu">
+                                <label class="divCalLab" for="sambodromoLiceu">Sambódromo - Liceu</label>
+                                <input type="radio" id="TeatroGebesMedeiro" name="local" value="TeatroGebesMedeiro">
+                                <label class="divCalLab" for="TeatroGebesMedeiro">Teatro Gebes Medeiros</label>
+                                <input type="radio" id="TeatroAmazonas" name="local" value="TeatroAmazonas">
+                                <label class="divCalLab" for="TeatroAmazonas">Teatro Amazonas</label>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -144,21 +177,33 @@
     let diaGlobal =  "" 
 
     let tipoCategoria = "Todos"
-
     $('.ExibicaoPage').hide()
+    $('.Local').hide()
     let EventoButton = $('.agendaEventos')
     let ExibicaoButton = $('.agendaExposicoes')
 
     function ToggleExibicao(who){
         if (who == 'Evento'){
+            //div cards
             $('.mainDiv').show()
+            //card exibicao
             $('.ExibicaoPage').hide()
-            EventoButton.animate().addClass("active")
+            //barinha no Eventos e  Exposições
+            EventoButton.addClass("active")
             ExibicaoButton.removeClass("active")
+            // Esconder check de local e aparecer de generos
+            $('.Generos').show()
+            $('.Local').hide()
         }
         else{
+            // Aparecer check de local e Esconder de generos
+            $('.Generos').hide()
+            $('.Local').show()
+            //div cards
             $('.mainDiv').hide()
+            //div exibicao
             $('.ExibicaoPage').show()
+            //barinha no Eventos e  Exposições
             ExibicaoButton.addClass("active")
             EventoButton.removeClass("active")
         }
