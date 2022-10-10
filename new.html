@@ -48,15 +48,15 @@
                     <h3 class="divCalPeriodo">Generos</h3>
                     <div class="divCalGenerosCK">
                         <form>
-                            <input type="radio" id="todos" onclick="mudaTipoCategoria(value)"  name="category" value="Todos" checked="true">
+                            <input type="radio" id="todos" onclick="mudaTipoCategoria(value), mostraEvento(diaGlobal)"  name="category" value="Todos" checked="true">
                             <label class="divCalLab" for="todos">Todos</label><br>
-                            <input type="radio" id="musica" onclick="mudaTipoCategoria(value)" name="category" value="Música" checked="true">
+                            <input type="radio" id="musica" onclick="mudaTipoCategoria(value), mostraEvento(diaGlobal)" name="category" value="Música" >
                             <label class="divCalLab" for="musica">Música</label>
-                            <input type="radio" id="teatro" onclick="mudaTipoCategoria(value)" name="category" value="Teatro">
+                            <input type="radio" id="teatro" onclick="mudaTipoCategoria(value), mostraEvento(diaGlobal)" name="category" value="Teatro">
                             <label class="divCalLab" for="teatro">Teatro</label><br>
-                            <input type="radio" id="danca" onclick="mudaTipoCategoria(value)" name="category" value="Dança">
+                            <input type="radio" id="danca" onclick="mudaTipoCategoria(value), mostraEvento(diaGlobal)" name="category" value="Dança">
                             <label class="divCalLab" for="danca">Dança</label>
-                            <input type="radio" id="palestra" onclick="mudaTipoCategoria(value)" name="category" value="Palestra">
+                            <input type="radio" id="palestra" onclick="mudaTipoCategoria(value), mostraEvento(diaGlobal)" name="category" value="Palestra">
                             <label class="divCalLab" for="palestra">Palestra</label>
                             
                         </form>
@@ -483,7 +483,21 @@
             },
             type: 'GET'
         });
+
+        diaGlobal = getDate()
+        mudaTipo('seteDias')
+        mostraEvento(diaGlobal)
     }
+    
+function getDate(){
+        let today = new Date
+        day = today.getDate()
+        month = today.getMonth() +1
+        year = today.getFullYear()
+        result = day+"/"+month+"/"+year
+    return result;
+}
+
     $(function () {
         $("#calendario").datepicker({
 
