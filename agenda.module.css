@@ -444,4 +444,115 @@ input:checked + .divCalLab::after {
         width: 360px;
         height: 300px;
     }
+    .Generos{
+        margin-top: 2rem;
+    }
+    .local{
+        padding: 0;
+        margin-top: 2rem;
+    }
+    .localsp{
+        flex-direction: column;
+    }
+    .divCalendario{
+        margin-top: 2rem;
+    }
+    .ExibicaoDataHora{
+        flex-direction: column;
+        align-items: unset;
+    }
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+  /*Mais informações*/
+  .ifDivWidth{
+    max-width: 500px;
+    height: 500px;
+    color: black!important;
+    font-family: 'NormalFutura';
+    margin-right: 4rem;
+  }
+  .ifDivColor{
+    background-color: #FCA613;
+    padding: 0.6rem;
+    height: 250px;
+  }
+  .tituloif{
+    font-family: 'Futura';
+    padding: 0 6.5%;
+    color: black;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+  }
+  .categoriaif{
+    margin: 0.5rem 1.3rem;
+    color: black;
+    font-family: 'NormalFutura';
+    font-size: 1rem;
+}
+.dataif{
+    margin: 0.5rem 0.0rem;
+    color: black;
+    font-family: 'NormalFutura';
+    font-size: 1rem;
+}
+.horaif{
+    margin: 0.5rem 0.0rem;
+    color: black;
+    font-family: 'NormalFutura';
+    font-size: 1rem;
+}
+.localif{
+    margin: 0.5rem 1.2rem;
+    color: black;
+    font-family: 'NormalFutura';
+    font-size: 1rem;
+}
+.precoif{
+    margin: 0.5rem 0.0rem;
+    color: black;
+    font-family: 'NormalFutura';
+    font-size: 0.9rem;
+}
+.classif{
+    padding: 0 2rem;
+    display: block;
+}
+.precoif {
+    margin: 0.5rem 0.0rem;
+    color: black;
+    font-family: 'NormalFutura';
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+.mart{
+    margin-right: 0.5rem;
+}
+.ifDiv{
+    display: flex;
+    flex-direction: row;
+}
+.imgSinopse{
+    width: 250px;
+    
+}
+.divBackSinopse{
+    background-image: url('https://www3.al.sp.gov.br/repositorio/noticia/N-05-2021/fg265959.jpg');
+    width: 500px;
+    height: 250px;
+}
+.hSinopse{
+    font-family: 'Futura';
+    color: black;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+}
+.divSinopse{
+    max-width: 500px;
 }
