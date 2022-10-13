@@ -535,7 +535,7 @@ input:checked + .divCalLab::after {
     font-family: 'NormalFutura';
     font-size: 0.9rem;
 }
-.classif{
+.classifs{
     padding: 0 2rem;
     display: block;
 }
