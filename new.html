@@ -39,6 +39,13 @@
                     <input onclick="mudaTipo('trintaDias'), mostraEvento(diaGlobal)" class="divCalCheck" type="radio" id="prox_30_dias" name="date_type" value="prox_30_dias">
                     <label class="divCalLab" for="prox_30_dias">Próximos 30 dias</label>
                 </form>
+                <form class="ExibicaoFiltro">
+                    <h3 class="divCalPeriodo">Período</h3>
+                    <input class="divCalCheck" type="radio" id="emCartaz" name="filtroExib" value="emCartaz">
+                    <label class="divCalLab" for="emCartaz">Em Cartaz</label><br>
+                    <input class="divCalCheck" type="radio" id="permanentes" name="filtroExib" value="permanentes">
+                    <label class="divCalLab" for="permanentes">Permanentes</label><br>
+                </form>
                 <div class='divCalendario'>
                     <div onchange="mudaDia(value), mostraEvento(value)" id="calendario"></div>
 
@@ -181,7 +188,7 @@
     $('.Local').hide()
     let EventoButton = $('.agendaEventos')
     let ExibicaoButton = $('.agendaExposicoes')
-
+    ToggleExibicao('Evento')
     function ToggleExibicao(who){
         if (who == 'Evento'){
             //div cards
@@ -194,6 +201,9 @@
             // Esconder check de local e aparecer de generos
             $('.Generos').show()
             $('.Local').hide()
+            //Perildo inputs
+            $('.ExibicaoFiltro').hide()
+            $('.divCalForm').show()
         }
         else{
             // Aparecer check de local e Esconder de generos
@@ -206,6 +216,9 @@
             //barinha no Eventos e  Exposições
             ExibicaoButton.addClass("active")
             EventoButton.removeClass("active")
+            //Perildo inputs
+            $('.ExibicaoFiltro').show()
+            $('.divCalForm').hide()
         }
     }
     function mudaTipo(tipo){
