@@ -572,3 +572,6 @@ input:checked + .divCalLab::after {
 .divSinopse{
     max-width: 500px;
 }
+.textoSinopse{
+    font-family: 'NormalFutura';
+}
