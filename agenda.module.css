@@ -280,7 +280,7 @@ input:checked + .divCalLab::after {
 .local {
     margin: 0.3rem 0;
     padding: 0;
-    color: black;
+    color: white;
     font-family: 'NormalFutura';
     font-size: 0.9rem;
     padding: 0 6.5%;
@@ -353,7 +353,10 @@ input:checked + .divCalLab::after {
     color: #6566AA/*{fcHighlight}*/;
 }
 
-
+.fixp{
+    margin-left: 0.6rem;
+    margin-right: -9rem;
+}
 
 .expand {
     background-color: rgba(0,0,0,0.3);;
