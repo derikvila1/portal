@@ -286,6 +286,15 @@ input:checked + .divCalLab::after {
     padding: 0 6.5%;
     max-width: 200px;
 }
+.Localck{
+    margin: 0.3rem 0;
+    padding: 0;
+    color:black;
+    font-family: 'NormalFutura';
+    font-size: 0.9rem;
+    padding: 0 6.5%;
+    max-width: 200px;
+}
 .localsp{
     display: flex;
 }
@@ -470,7 +479,42 @@ input:checked + .divCalLab::after {
     font-weight: bold;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
-  }
+  }@media (max-width:1050px) {
+    .divCal{
+        flex-direction: column;
+    }
+    .Localck{
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+    .ExibicaoCard{
+        flex-direction: column;
+    }
+    .ExibicaoInf{
+        width: 468px;
+        height: 360px;
+    }
+    .ExibicaoImg {
+        width: 500px;
+        height: 250px;
+    }
+    .Generos{
+        margin-top: 2rem;
+    }
+    .local{
+        padding: 0;
+        margin-top: 2rem;
+    }
+    .localsp{
+        flex-direction: row;
+    }
+    .divCalendario{
+        margin-top: 2rem;
+    }
+    .ExibicaoDataHora{
+        flex-direction: column;
+        align-items: unset;
+    }
   @media (max-width:768px) {
     .ExibicaoCard{
         flex-direction: column;
@@ -491,7 +535,7 @@ input:checked + .divCalLab::after {
         margin-top: 2rem;
     }
     .localsp{
-        flex-direction: column;
+        flex-direction: row;
     }
     .divCalendario{
         margin-top: 2rem;
@@ -499,6 +543,11 @@ input:checked + .divCalLab::after {
     .ExibicaoDataHora{
         flex-direction: column;
         align-items: unset;
+    }
+    @media (max-width:426px) {
+        .localsp{
+            flex-direction: column;
+        }
     }
 }
 .material-symbols-outlined {
