@@ -320,6 +320,29 @@ input:checked + .divCalLab::after {
 .ui-widget-content{
     border: 2px solid black
  }
+ .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border: 1px solid #090909/*{borderColorActive}*/;
+    background: #a4a5de/*{bgColorActive}*/ !important ;
+    font-weight: bold/*{fwDefault}*/; 
+    border-radius: 50%;
+    box-shadow: -0.6px 0.5px 1px #6566AA;
+    color: #212121/*{fcActive}*/;
+} 
+ .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #ffffff/*{borderColorDefault}*/;
+    background: white;
+    font-weight: normal/*{fwDefault}*/;
+    color: #000000/*{fcDefault}*/;
+}
+
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #ffffff/*{borderColorHighlight}*/;
+    border-radius: 50%;
+    box-shadow: -0.6px 0.5px 1px #6566AA;
+    background: rgb(255, 255, 255)/*{bgColorHighlight}*/ url(images/ui-bg_glass_55_fbf9ee_1x400.png)/*{bgImgUrlHighlight}*/ 50%/*{bgHighlightXPos}*/ 50%/*{bgHighlightYPos}*/ repeat-x/*{bgHighlightRepeat}*/;
+    color: #6566AA/*{fcHighlight}*/;
+}
 
 
 
