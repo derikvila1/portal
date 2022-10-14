@@ -181,14 +181,17 @@
 
 <script>
     let tipoPeriodo = ""
-    let diaGlobal =  "" 
-
+    let diaGlobal =  ""
     let tipoCategoria = "Todos"
+
     $('.ExibicaoPage').hide()
     $('.Local').hide()
+
     let EventoButton = $('.agendaEventos')
     let ExibicaoButton = $('.agendaExposicoes')
+
     ToggleExibicao('Evento')
+    
     function ToggleExibicao(who){
         if (who == 'Evento'){
             //div cards
