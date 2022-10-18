@@ -69,7 +69,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="Local">
+                <div class="Localck">
                     <h3 class="divCalLocal">Local</h3>
                     <div class="divCalLocalCK">
                         <form class="localsp">
@@ -147,7 +147,7 @@
             ExibicaoButton.removeClass("active")
             // Esconder check de local e aparecer de generos
             $('.Generos').show()
-            $('.Local').hide()
+            $('.Localck').hide()
             //Perildo inputs
             $('.ExibicaoFiltro').hide()
             $('.divCalForm').show()
@@ -155,7 +155,7 @@
         else{
             // Aparecer check de local e Esconder de generos
             $('.Generos').hide()
-            $('.Local').show()
+            $('.Localck').show()
             //div cards
             $('.mainDiv').hide()
             //div exibicao
@@ -284,7 +284,7 @@
                                 </div>
 
                                 <div class="classif">
-                                    <p class="preco"><span class="material-symbols-rounded">paid</span>${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
+                                    <span class="material-symbols-rounded fixp">paid</span><p class="preco">${element.price === "000"? "Evento gratuito": "Evento pago"}</p>
                                     <img class="clasificacao" src="https://sistemas.cultura.am.gov.br/sigec/themes/sigec/img/classificacao/${faixaEtaria3}.png" alt="">
                                 </div>
 
