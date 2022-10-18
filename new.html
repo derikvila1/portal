@@ -113,64 +113,8 @@
     <div class="mainDiv"  id="divCard">
 
     </div>
-    <div class="ExibicaoPage">
-        <div class="ExibicaoCard">
-            <div class="ExibicaoImg">
-    
-            </div>
-            <div class="ExibicaoInf">
-                <p class="ExibicaoSubtitulo">Exposição Fotografica</p>
-                <p class="ExibicaoTitulo">Chão Velho</p>
-                <p class="ExibicaoDescricao">Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                    ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only five centuries, but 
-                    also the leap into electronic typesetting</p>
-                <div class="ExibicaoDataHora">
-                    <p class="ExibicaoData"><span class="material-symbols-outlined Exibicaoicons">event_upcoming</span>A partir de 28 de agosto , terça a sabado</p>
-                    <p class="ExibicaoHora"><span class="material-symbols-rounded Exibicaoicons">schedule</span>9h ás 15h</p>
-                </div>
-                <p class="ExibicaoLocal"><span class="material-symbols-rounded Exibicaoicons">location_on</span>Palacete Provincial</p>
-            </div>
-        </div>
-        <div class="ExibicaoCard">
-            <div class="ExibicaoImg">
-    
-            </div>
-            <div class="ExibicaoInf">
-                <p class="ExibicaoSubtitulo">Exposição Fotografica</p>
-                <p class="ExibicaoTitulo">Chão Velho</p>
-                <p class="ExibicaoDescricao">Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                    ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only five centuries, but 
-                    also the leap into electronic typesetting</p>
-                <div class="ExibicaoDataHora">
-                    <p class="ExibicaoData"><span class="material-symbols-outlined Exibicaoicons">event_upcoming</span>A partir de 28 de agosto , terça a sabado</p>
-                    <p class="ExibicaoHora"><span class="material-symbols-rounded Exibicaoicons">schedule</span>9h ás 15h</p>
-                </div>
-                <p class="ExibicaoLocal"><span class="material-symbols-rounded Exibicaoicons">location_on</span>Palacete Provincial</p>
-            </div>
-        </div>
-        <div class="ExibicaoCard">
-            <div class="ExibicaoImg">
-    
-            </div>
-            <div class="ExibicaoInf">
-                <p class="ExibicaoSubtitulo">Exposição Fotografica</p>
-                <p class="ExibicaoTitulo">Chão Velho</p>
-                <p class="ExibicaoDescricao">Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                    ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only five centuries, but 
-                    also the leap into electronic typesetting</p>
-                <div class="ExibicaoDataHora">
-                    <p class="ExibicaoData"><span class="material-symbols-outlined Exibicaoicons">event_upcoming</span>A partir de 28 de agosto , terça a sabado</p>
-                    <p class="ExibicaoHora"><span class="material-symbols-rounded Exibicaoicons">schedule</span>9h ás 15h</p>
-                </div>
-                <p class="ExibicaoLocal"><span class="material-symbols-rounded Exibicaoicons">location_on</span>Palacete Provincial</p>
-            </div>
-        </div>
+    <div class="ExibicaoPage" id="ExibicaoDiv">
+        
     </div>
 
 
@@ -256,8 +200,6 @@
 
         rawData = buscaTrintaDias(dias[0], dias[1], dias[2])
         }
-
-
 
 
         rawData.forEach(element => {
@@ -413,6 +355,33 @@
 
         });
         document.getElementById('divCard').innerHTML = (html.length > 0) ? html : null;
+    }
+
+
+    function mostraExpo(){
+        let html = '';
+        rawData.forEach(element => {
+            html += `<div class="ExibicaoCard">
+            <div class="ExibicaoImg" style="background-image:url('https://ceugaleria.com.br/galeria/wp-content/uploads/2019/11/Conheca-5-belas-artes-famosas-na-histo%CC%81ria-da-arte-noite-estrelada-ceu-galeria.jpg')">
+
+            </div>
+            <div class="ExibicaoInf">
+                <p class="ExibicaoSubtitulo">Exposição Fotografica</p>
+                <p class="ExibicaoTitulo">Chão Velho</p>
+                <p class="ExibicaoDescricao">Lorem Ipsum is simply dummy text of the printing and 
+                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                    ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                    it to make a type specimen book. It has survived not only five centuries, but 
+                    also the leap into electronic typesetting</p>
+                <div class="ExibicaoDataHora">
+                    <p class="ExibicaoData"><span class="material-symbols-outlined Exibicaoicons">event_upcoming</span>A partir de 28 de agosto , terça a sabado</p>
+                    <p class="ExibicaoHora"><span class="material-symbols-rounded Exibicaoicons">schedule</span>9h ás 15h</p>
+                </div>
+                <p class="ExibicaoLocal"><span class="material-symbols-rounded Exibicaoicons">location_on</span>Palacete Provincial</p>
+            </div>
+        </div>`
+        });
+        document.getElementById('ExibicaoDiv').innerHTML = (html.length > 0) ? html : null;
     }
 
     function agenda_local(dia, mes, ano) {
