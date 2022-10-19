@@ -25,9 +25,11 @@
     padding: 0 6.5%;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
 @font-face {
     font-family: "Futura";
-    src: url("./fonts/FuturaPTBold.otf");
+    src: url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
 }
 
 @font-face {
@@ -372,7 +374,7 @@ input:checked + .divCalLab::after {
     border: 1px solid #ffffff/*{borderColorHighlight}*/;
     border-radius: 50%;
     box-shadow: -0.6px 0.5px 1px #6566AA;
-    background: rgb(255, 255, 255)/*{bgColorHighlight}*/ url(images/ui-bg_glass_55_fbf9ee_1x400.png)/*{bgImgUrlHighlight}*/ 50%/*{bgHighlightXPos}*/ 50%/*{bgHighlightYPos}*/ repeat-x/*{bgHighlightRepeat}*/;
+    background: rgb(255, 255, 255)/*{bgColorHighlight}*/ /*{bgImgUrlHighlight}*/ 50%/*{bgHighlightXPos}*/ 50%/*{bgHighlightYPos}*/ repeat-x/*{bgHighlightRepeat}*/;
     color: #6566AA/*{fcHighlight}*/;
 }
 
@@ -1024,12 +1026,8 @@ input:checked + .divCalLab::after {
             </div>
             <div class="ExibicaoInf">
                 <p class="ExibicaoSubtitulo">Exposição Fotografica</p>
-                <p class="ExibicaoTitulo">Chão Velho</p>
-                <p class="ExibicaoDescricao">Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                    ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only five centuries, but 
-                    also the leap into electronic typesetting</p>
+                <p class="ExibicaoTitulo">${element.titulo}</p>
+                <p class="ExibicaoDescricao">${element.description}</p>
                 <div class="ExibicaoDataHora">
                     <p class="ExibicaoData"><span class="material-symbols-outlined Exibicaoicons">event_upcoming</span>A partir de 28 de agosto , terça a sabado</p>
                     <p class="ExibicaoHora"><span class="material-symbols-rounded Exibicaoicons">schedule</span>9h ás 15h</p>
