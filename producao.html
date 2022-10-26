@@ -718,15 +718,15 @@ input:checked + .divCalLab::after {
                     <div class="divCalLocalCK">
                         <form class="localsp">
                             <div>
-                                <input type="radio" id="palaceteProvincial" name="local" value="palaceteProvincial" >
+                                <input type="radio" onclick="mudaLocalExpo('PALACETE PROVINCIAL'),mostraExpo()" id="palaceteProvincial" name="local" value="palaceteProvincial" >
                                 <label class="divCalLab" for="palaceteProvincial">Palacete Provincial</label><br>
-                                <input type="radio" id="palacioRioNegro" name="local" value="palacioRioNegro">
+                                <input type="radio" onclick="mudaLocalExpo('PALÁCIO RIO NEGRO'),mostraExpo()" id="palacioRioNegro" name="local" value="palacioRioNegro">
                                 <label class="divCalLab" for="palacioRioNegro">Palácio Rio Negro</label>
-                                <input type="radio" id="palacioDaJustica" name="local" value="palacioDaJustica">
+                                <input type="radio" onclick="mudaLocalExpo('PALÁCIO DA JUSTIÇA'),mostraExpo()" id="palacioDaJustica" name="local" value="palacioDaJustica">
                                 <label class="divCalLab" for="palacioDaJustica">Palácio da Justiça</label><br>
-                                <input type="radio" id="povosDaAmazonia" name="local" value="povosDaAmazonia">
+                                <input type="radio" onclick="mudaLocalExpo('POVOS DA AMAZÔNIA'),mostraExpo()" id="povosDaAmazonia" name="local" value="povosDaAmazonia">
                                 <label class="divCalLab" for="povosDaAmazonia">Povos da Amazônia</label>
-                                <input type="radio" id="usinaChaminé" name="local" value="usinaChaminé">
+                                <input type="radio" onclick="mudaLocalExpo('USINA CHAMINÉ'),mostraExpo()" id="usinaChaminé" name="local" value="usinaChaminé">
                                 <label class="divCalLab" for="usinaChaminé">Usina Chaminé</label>
                                 
                             </div>
@@ -772,6 +772,7 @@ input:checked + .divCalLab::after {
     let diaGlobal =  ""
     let tipoCategoria = "Todos"
     let tipoExpo = "Exposição Temporária"
+    let localExpo = "Todos"
 
     $('.ExibicaoPage').hide()
     $('.Local').hide()
@@ -818,6 +819,9 @@ input:checked + .divCalLab::after {
     }
     function mudaTipoExpo(tipo){
         tipoExpo = tipo
+    }
+    function mudaLocalExpo(tipo){
+        localExpo = tipo
     }
 
     function mudaDia(value){
@@ -1004,7 +1008,7 @@ input:checked + .divCalLab::after {
 
     function mostraExpo(){
         let html = '';
-        rawData = buscaExpo(tipoExpo)
+        rawData = buscaExpo(tipoExpo)        
         rawData.forEach(element => {
             console.log("1")
             html += `<div class="ExibicaoCard">
