@@ -546,6 +546,7 @@ input:checked + .divCalLab::after {
         flex-direction: column;
         align-items: unset;
     }
+}
     @media (max-width:426px) {
         .localsp{
             flex-direction: column;
@@ -646,6 +647,7 @@ input:checked + .divCalLab::after {
 .divSinopse{
     max-width: 500px;
 }
+
 .textoSinopse{
     font-family: 'NormalFutura';
 }
