@@ -432,7 +432,6 @@ input:checked + .divCalLab::after {
   .ExibicaoImg {
     width: 400px;
     height: 300px;
-    background-image:url("https://ceugaleria.com.br/galeria/wp-content/uploads/2019/11/Conheca-5-belas-artes-famosas-na-histo%CC%81ria-da-arte-noite-estrelada-ceu-galeria.jpg");
   }
   .ExibicaoInf{
     width: 700px;
