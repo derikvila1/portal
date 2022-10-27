@@ -445,6 +445,8 @@ input:checked + .divCalLab::after {
   .ExibicaoImg {
     width: 400px;
     height: 300px;
+    background-position: center;
+    background-size: cover;
   }
   .ExibicaoInf{
     width: 700px;
@@ -465,11 +467,15 @@ input:checked + .divCalLab::after {
     padding: 0;
   }
   .ExibicaoDescricao{
-    margin-top: 0.3rem;
+    margin-top: 0.4rem;
     font-family: "Futura PT", Sans-serif;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
   }
   .ExibicaoDataHora{
     display: flex;
@@ -493,8 +499,8 @@ input:checked + .divCalLab::after {
     font-family: "Futura PT", Sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
-    margin-top: 0.3rem;
     margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
   }@media (max-width:1050px) {
     .divCal{
         flex-direction: column;
