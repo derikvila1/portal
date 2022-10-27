@@ -546,6 +546,9 @@ input:checked + .divCalLab::after {
         flex-direction: column;
         align-items: unset;
     }
+    .ExibicaoTitulo{
+        font-size: 1.9rem;
+    }
 }
     @media (max-width:426px) {
         .localsp{
